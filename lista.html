@@ -73,7 +73,7 @@
                                 var value = $(this).val().toLowerCase();
                                 $("#usuarios-generados").empty();
                                 $.each(myData, (i, item) => {
-                                    if (fieldContainsText(item, "username", value) || fieldContainsText(item, "email", value)) {
+                                    if (fieldContainsText(item, "name", value) || fieldContainsText(item, "email", value)) {
                                         var row = generarPanelUsuario(item);
                                         $("#usuarios-generados").append(row);
                                     }
