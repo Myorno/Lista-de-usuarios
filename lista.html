@@ -27,15 +27,15 @@
                 <div id="usuarios-generados"></div>
                 <script>
                     var myData; 
-                    $(document).ready(function(){
+                    $(document).ready(()=> {
                         $.ajax({
                             type: "GET",
                             url: "https://jsonplaceholder.typicode.com/users",
                             dataType: "json",
                             
-                            success: function(data){
+                            success: (data)=> {
                                 myData = data;
-                                $.each(data, function(i, item){
+                                $.each(data, (i, item) =>{
                                     var row = generarPanelUsuario(item);
                                     console.log(item.username);
                                     $("#usuarios-generados").append(row);
@@ -68,8 +68,8 @@
                             </div>
                         </div>`;
                     }
-                    $(document).ready(function(){
-                            $("#myInput").on("keyup", function() {
+                    $(document).ready(() => {
+                            $("#myInput").on("keyup", function (){
                                 var value = $(this).val().toLowerCase();
                                 $("#usuarios-generados").empty();
                                 $.each(myData, (i, item) => {
